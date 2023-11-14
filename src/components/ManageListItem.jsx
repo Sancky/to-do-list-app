@@ -4,17 +4,17 @@ import { faGear, faXmark } from "@fortawesome/free-solid-svg-icons";
 export default function ManageListItem({
     item,
     handleList,
-    edit,
-    remove,
-    description
+    editAction,
+    removeAction,
+    descriptionRender
 }) {
-    function removeItemList() {
+    function removeItem() {
         return handleList((list) =>
             list.filter((element) => element.id !== item.id)
         );
     }
 
-    function editItemList() {
+    function editItem() {
         return handleList((list) =>
             list.map((element) =>
                 element.id === item.id
@@ -38,31 +38,31 @@ export default function ManageListItem({
         );
     }
 
-    if (edit) {
+    if (editAction) {
         return (
             <>
                 <FontAwesomeIcon
                     icon={faGear}
                     className="text-slate-900 cursor-pointer"
-                    onClick={editItemList}
+                    onClick={editItem}
                 />
             </>
         );
     }
 
-    if (remove) {
+    if (removeAction) {
         return (
             <>
                 <FontAwesomeIcon
                     icon={faXmark}
                     className="text-slate-900 cursor-pointer"
-                    onClick={removeItemList}
+                    onClick={removeItem}
                 />
             </>
         );
     }
 
-    if (description) {
+    if (descriptionRender) {
         return (
             <>
                 {!item.isEditing ? (
