@@ -70,12 +70,13 @@ export default function ManageListItem({
                         {item.description}
                     </div>
                 ) : (
-                    <input
-                        className="bg-slate-600 text-slate-900 font-light text-1xl text-left w-full mr-4 outline-none selection:bg-slate-800 selection:text-slate-600"
+                    <textarea
+                        className="bg-slate-600 text-slate-900 font-light text-1xl text-left w-full mr-4 resize-none outline-none selection:bg-slate-800 selection:text-slate-600"
                         defaultValue={item.description}
                         onKeyDown={saveItemDescription}
                         name="edit-description"
-                    ></input>
+                        rows='8'
+                    ></textarea>
                 )}
             </>
         );
