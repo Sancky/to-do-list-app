@@ -16,9 +16,9 @@ export default function InsertListForm({ handleList }) {
 
     return (
         <>
-            <div className="flex flex-wrap items-center justify-center bg-slate-800 p-1.5 m-1 w-[50%] rounded">
+            <div className="flex bg-slate-800 p-1.5 m-1 w-[50%] rounded">
                 <input
-                    className="flex flex-wrap items-center justify-between bg-slate-600 text-slate-900 font-light text-1xl text-center p-1.5 m-1 w-full rounded outline-none placeholder:text-slate-900 selection:bg-slate-800 selection:text-slate-600"
+                    className="bg-slate-600 text-slate-900 font-light text-center p-1.5 m-1 w-full rounded outline-none placeholder:text-slate-900 selection:bg-slate-800 selection:text-slate-600"
                     placeholder="Write your new todo task here..."
                     onKeyDown={submitTodoItem}
                     name="insert-item-description"
